@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "jsx": "react",
+    "incremental": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2015"]
+  }
+}

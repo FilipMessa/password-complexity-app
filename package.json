@@ -1,0 +1,36 @@
+{
+  "name": "@password-complexity/root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "server",
+    "client"
+  ],
+  "dependencies": {
+    "@common/eslint-config": "^1.0.0",
+    "concurrently": "^5.1.0"
+  },
+  "scripts": {
+    "client": "yarn workspace client dev",
+    "server": "yarn workspace server dev",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\"",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "eslint": ">=6.8.0 <7",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.2",
+    "@types/jest": "^25.1.3"
+  }
+}

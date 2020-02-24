@@ -1,0 +1,10 @@
+  
+# This file is for the whole monorepo. Consider adding eslint-ignore comments
+# closer to your code.
+
+node_modules/
+/.pnp
+
+coverage/
+build/
+dist/
