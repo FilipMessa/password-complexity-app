@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const OFF = 0;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const WARN = 1;
 const ERROR = 2;
 
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'prettier/@typescript-eslint',
+    'plugin:react/recommended',
     'plugin:prettier/recommended',
   ],
   parserOptions: {
@@ -18,14 +19,14 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react-hooks'],
+  plugins: ['@typescript-eslint', 'react-hooks'],
   env: {
     browser: true,
     jest: true,
     node: true,
+    es6: true,
   },
   rules: {
-    'react/jsx-filename-extension': [ERROR, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     '@typescript-eslint/explicit-function-return-type': OFF,
   },
   settings: {

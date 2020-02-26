@@ -1,4 +1,4 @@
 module.exports = {
-  "parser": "babel-eslint",
+  root: true,
   "extends": ["@common/eslint-config"]
 }
