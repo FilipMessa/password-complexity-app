@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/password-complexity/v1 should return bad request error 1`] = `
+Object {
+  "message": "password missing in POST body",
+  "status": "error",
+  "statusCode": 400,
+  "type": "Bad Request",
+}
+`;
+
+exports[`/password-complexity/v1 should return socpre 0 1`] = `
+Object {
+  "score": 0,
+  "statusCode": 200,
+  "type": "Worst",
+}
+`;
+
+exports[`/password-complexity/v1 should return socpre 1 1`] = `
+Object {
+  "score": 1,
+  "statusCode": 200,
+  "type": "Bad",
+}
+`;
+
+exports[`/password-complexity/v1 should return socpre 2 1`] = `
+Object {
+  "score": 1,
+  "statusCode": 200,
+  "type": "Bad",
+}
+`;
+
+exports[`/password-complexity/v1 should return socpre 3 1`] = `
+Object {
+  "score": 1,
+  "statusCode": 200,
+  "type": "Bad",
+}
+`;
+
+exports[`/password-complexity/v1 should return socpre 4 1`] = `
+Object {
+  "score": 3,
+  "statusCode": 200,
+  "type": "Good",
+}
+`;
+
+exports[`/password-complexity/v2 should return bad request error 1`] = `
+Object {
+  "message": "password missing in POST body",
+  "status": "error",
+  "statusCode": 400,
+  "type": "Bad Request",
+}
+`;
+
+exports[`/password-complexity/v2 should return socpre 0 1`] = `
+Object {
+  "score": 0,
+  "statusCode": 200,
+  "type": "Worst",
+}
+`;
+
+exports[`/password-complexity/v2 should return socpre 1 1`] = `
+Object {
+  "score": 1,
+  "statusCode": 200,
+  "type": "Bad",
+}
+`;
+
+exports[`/password-complexity/v2 should return socpre 2 1`] = `
+Object {
+  "score": 2,
+  "statusCode": 200,
+  "type": "Weak",
+}
+`;
+
+exports[`/password-complexity/v2 should return socpre 3 1`] = `
+Object {
+  "score": 3,
+  "statusCode": 200,
+  "type": "Good",
+}
+`;
+
+exports[`/password-complexity/v2 should return socpre 4 1`] = `
+Object {
+  "score": 4,
+  "statusCode": 200,
+  "type": "Strong",
+}
+`;
+
+exports[`should return not found error 1`] = `
+Object {
+  "message": "Requested resources was not found.",
+  "status": "error",
+  "statusCode": 404,
+  "type": "Not Found",
+}
+`;

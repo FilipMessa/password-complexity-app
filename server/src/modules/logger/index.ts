@@ -1,4 +1,4 @@
-import winston from 'winston';
+import * as winston from 'winston';
 
 const colorizer = winston.format.colorize();
 const options = {
