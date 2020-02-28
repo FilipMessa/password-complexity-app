@@ -13,7 +13,7 @@ exports[`/password-complexity/v1 should return socpre 0 1`] = `
 Object {
   "score": 0,
   "statusCode": 200,
-  "type": "Worst",
+  "strength": "Worst",
 }
 `;
 
@@ -21,7 +21,7 @@ exports[`/password-complexity/v1 should return socpre 1 1`] = `
 Object {
   "score": 1,
   "statusCode": 200,
-  "type": "Bad",
+  "strength": "Bad",
 }
 `;
 
@@ -29,7 +29,7 @@ exports[`/password-complexity/v1 should return socpre 2 1`] = `
 Object {
   "score": 1,
   "statusCode": 200,
-  "type": "Bad",
+  "strength": "Bad",
 }
 `;
 
@@ -37,7 +37,7 @@ exports[`/password-complexity/v1 should return socpre 3 1`] = `
 Object {
   "score": 1,
   "statusCode": 200,
-  "type": "Bad",
+  "strength": "Bad",
 }
 `;
 
@@ -45,7 +45,7 @@ exports[`/password-complexity/v1 should return socpre 4 1`] = `
 Object {
   "score": 3,
   "statusCode": 200,
-  "type": "Good",
+  "strength": "Good",
 }
 `;
 
@@ -62,7 +62,7 @@ exports[`/password-complexity/v2 should return socpre 0 1`] = `
 Object {
   "score": 0,
   "statusCode": 200,
-  "type": "Worst",
+  "strength": "Worst",
 }
 `;
 
@@ -70,7 +70,7 @@ exports[`/password-complexity/v2 should return socpre 1 1`] = `
 Object {
   "score": 1,
   "statusCode": 200,
-  "type": "Bad",
+  "strength": "Bad",
 }
 `;
 
@@ -78,7 +78,7 @@ exports[`/password-complexity/v2 should return socpre 2 1`] = `
 Object {
   "score": 2,
   "statusCode": 200,
-  "type": "Weak",
+  "strength": "Weak",
 }
 `;
 
@@ -86,7 +86,7 @@ exports[`/password-complexity/v2 should return socpre 3 1`] = `
 Object {
   "score": 3,
   "statusCode": 200,
-  "type": "Good",
+  "strength": "Good",
 }
 `;
 
@@ -94,7 +94,7 @@ exports[`/password-complexity/v2 should return socpre 4 1`] = `
 Object {
   "score": 4,
   "statusCode": 200,
-  "type": "Strong",
+  "strength": "Strong",
 }
 `;
 

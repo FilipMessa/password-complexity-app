@@ -1,45 +1,37 @@
-import React, { Component, useEffect, useState, useCallback } from 'react';
-import { hot } from 'react-hot-loader';
-import styled, { ThemeProvider } from 'styled-components';
-import theme from './theme';
+import React from 'react';
+import styled from 'styled-components';
+import { InputField, Badge, Title, DoomFace } from './components';
+import { Score, StrengthType } from './types';
 
-import { getPasswordScore } from './utils/requests'; // todo rename this
-
-const Text = styled.span`
-  color: blue;
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const App: React.FC = () => {
-  const [password, setPassword] = useState('');
-  const [score, setScore] = useState();
-  //const [passwordScore, setPasswordScore] = useState(null);
+const Wrapper = styled.div`
+  margin-top: 85px;
+`;
 
-  const resetScore = useCallback(() => setScore(null), []);
+interface AppProps {
+  title: string;
+  password: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  faceType?: Score;
+  isError?: boolean;
+  strength?: StrengthType;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await getPasswordScore(password);
-      setScore(result);
-    };
-    if (!password) {
-      resetScore();
-    } else {
-      fetchData();
-    }
-
-    console.log(password);
-  }, [password]);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
-
+const App: React.FC<AppProps> = ({ title, password, onChange, faceType, isError, strength }) => {
+  const errorMessage = isError ? 'Ups! Something went wrong :(' : '';
   return (
-    <ThemeProvider theme={theme}>
-      <input value={password} onChange={handleChange} />
-      <Text>{password}</Text>
-      <span>{JSON.stringify(score, null, 1)}</span>
-    </ThemeProvider>
+    <Layout>
+      <Title>{title}</Title>
+      <InputField value={password} onChange={onChange} errorMessage={errorMessage} />
+      <Wrapper>{typeof faceType === 'number' && !isError && <DoomFace type={faceType} />}</Wrapper>
+      {strength && <Badge label={strength} />}
+    </Layout>
   );
 };
 
-export default hot(module)(App);
+export default App;

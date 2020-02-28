@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './src/App';
-ReactDOM.render(<App />, document.getElementById('root'));
+import Main from './src/Main';
+ReactDOM.render(<Main />, document.getElementById('root'));
 
 if (module.hot) {
   module.hot.accept();

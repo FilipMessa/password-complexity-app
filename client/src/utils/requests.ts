@@ -1,14 +1,15 @@
 const API_URL = 'http://localhost:3005'; // TODO from env.
+import axios from 'axios';
+import { PasswordScore as Response } from '../types';
 
-export const getPasswordScore = async (password: string, version: 'v1' | 'v2' = 'v1') => {
-  const res = await fetch(`${API_URL}/password-complexity/${version}`, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ password }),
+export enum API {
+  VERSION_1 = 'v1',
+  VERSION_2 = 'v2',
+}
+
+export const fetchPasswordScore = async (password: string, version: API = API.VERSION_1) => {
+  const { data } = await axios.post<Response>(`${API_URL}/password-complexity/${version}`, {
+    password,
   });
-  return res.json();
+  return data;
 };

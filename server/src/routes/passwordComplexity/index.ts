@@ -22,7 +22,7 @@ function getPasswordStrengthText(score: number) {
 function createResponse(score: number) {
   return {
     score,
-    type: getPasswordStrengthText(score),
+    strength: getPasswordStrengthText(score),
     statusCode: 200,
   };
 }

@@ -2,9 +2,9 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "module": "commonjs",
+    "target": "ES2019",
     "strict": true,
     "jsx": "react",
-    "incremental": true,
     "experimentalDecorators": true,
     "lib": ["dom", "es2015"]
   }

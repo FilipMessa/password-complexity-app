@@ -37,6 +37,7 @@ module.exports = {
     'jest/no-identical-title': ERROR,
     'jest/prefer-to-have-length': WARN,
     'jest/valid-expect': ERROR,
+    'react/prop-types': OFF,
   },
   settings: {
     react: {
