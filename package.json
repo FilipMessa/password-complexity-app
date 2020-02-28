@@ -16,6 +16,7 @@
     "server": "yarn workspace server dev",
     "dev": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\"",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "test:e2e": "yarn workspace client dev && yarn workspace server dev && yarn workspace cypress start && wait-on http://localhost:8000 && http://localhost:3005",
     "test": "jest"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "ts-jest": "^25.2.1",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.2",
+    "wait-on": "^4.0.1"
   }
 }

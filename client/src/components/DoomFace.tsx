@@ -13,7 +13,9 @@ interface ImagesProps {
   type: 0 | 1 | 2 | 3 | 4;
 }
 
-export const DoomFace = styled.div<ImagesProps>`
+export const DoomFace = styled.div.attrs(() => ({
+  'data-testid': 'doom-face',
+}))<ImagesProps>`
   width: 187px;
   height: 235px;
   display: ${({ type }) => (type !== undefined ? 'block' : 'none')};

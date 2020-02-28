@@ -27,6 +27,8 @@ const Input = styled.input`
   margin-left: 28px;
   appearance: none;
   overflow: visible;
+  height: 20px;
+  width: 20px;
 `;
 
 const Text = styled.span<{ checked: boolean }>`
@@ -59,7 +61,13 @@ export const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange }) 
 
   return (
     <Label>
-      <Input type="checkbox" checked={isChecked} onChange={toggle} name={label} />
+      <Input
+        data-testid="checkbox"
+        type="checkbox"
+        checked={isChecked}
+        onChange={toggle}
+        name={label}
+      />
       {label && <Text checked={checked}>{label}</Text>}
     </Label>
   );
