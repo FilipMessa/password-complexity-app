@@ -9,6 +9,7 @@ const Text = styled.span`
 
 interface BadgeProps {
   label: string;
+  dataTestId?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({ label }) => <Text>{label}</Text>;

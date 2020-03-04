@@ -9,6 +9,10 @@ setGlobalMiddlewares(server);
 
 server.use('/password-complexity', passwordComplexity);
 
+server.all('/', (_req, res) => {
+  res.json({ state: 'running' });
+});
+
 server.use(notFound);
 server.use((err: AppError, _req: Request, res: Response, next: NextFunction) => {
   handleError(err, res);

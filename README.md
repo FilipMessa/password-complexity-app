@@ -30,7 +30,8 @@ The yarn workspaces are used to organize the project codebase.
 |
 ├── packages/
 │   ├── eslint-config/                    # eslint configuration package
-│   └── password-strength/                # package for password strength analysis
+│   ├── password-strength/                # package for password strength analysis
+|   └── e2e-tests/                        # cypress for e2e tests
 |
 └── package.json                          # global workspaces definition
 ```
@@ -41,6 +42,7 @@ The yarn workspaces are used to organize the project codebase.
 - `yarn server` - run BE application
 - `yarn lint` - check the source code
 - `yarn test` - run all tests
+- `yarn test:e2e` - run e2e tests
 
 ## workspaces
 
@@ -128,7 +130,6 @@ Common eslint's configuration package for repo.
 
 # TODO
 
-- cypress: e2e tests [WIP]
 - improve the Jest's setting (related to cypress)
 - setup GitHub Actions (PR, deploy)
 - improve design
