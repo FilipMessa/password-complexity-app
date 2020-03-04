@@ -29,7 +29,7 @@ const App: React.FC<AppProps> = ({ title, password, onChange, faceType, isError,
       <Title>{title}</Title>
       <InputField value={password} onChange={onChange} errorMessage={errorMessage} />
       <Wrapper>{typeof faceType === 'number' && !isError && <DoomFace type={faceType} />}</Wrapper>
-      {strength && <Badge label={strength} />}
+      {strength && !isError && <Badge label={strength} />}
     </Layout>
   );
 };
