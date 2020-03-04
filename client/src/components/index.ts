@@ -4,3 +4,4 @@ export { DoomFace } from './DoomFace';
 export { GlobalStyles } from './GlobalStyles';
 export { InputField } from './InputField';
 export { Title } from './Title';
+export { PasswordIndicator } from './PasswordIndicator';

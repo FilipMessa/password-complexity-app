@@ -27,6 +27,8 @@ const Input = styled.input`
   margin-left: 28px;
   appearance: none;
   overflow: visible;
+  height: 20px;
+  width: 20px;
 `;
 
 const Text = styled.span<{ checked: boolean }>`

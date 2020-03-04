@@ -46,6 +46,6 @@ export const InputField: React.FC<InputFieldProps> = ({ value, onChange, errorMe
       value={value}
       onChange={onChange}
     />
-    {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+    {errorMessage && <ErrorMessage data-testid="input-error-msg">{errorMessage}</ErrorMessage>}
   </Wrapper>
 );

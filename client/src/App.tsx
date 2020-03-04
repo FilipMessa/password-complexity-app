@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { InputField, Badge, Title, DoomFace } from './components';
+import { InputField, Title, PasswordIndicator } from './components';
 import { Score, StrengthType } from './types';
 
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Wrapper = styled.div`
-  margin-top: 85px;
 `;
 
 interface AppProps {
@@ -28,8 +24,7 @@ const App: React.FC<AppProps> = ({ title, password, onChange, faceType, isError,
     <Layout>
       <Title>{title}</Title>
       <InputField value={password} onChange={onChange} errorMessage={errorMessage} />
-      <Wrapper>{typeof faceType === 'number' && !isError && <DoomFace type={faceType} />}</Wrapper>
-      {strength && <Badge label={strength} />}
+      {!isError && <PasswordIndicator faceType={faceType} strength={strength} />}
     </Layout>
   );
 };
