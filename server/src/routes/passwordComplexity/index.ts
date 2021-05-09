@@ -27,10 +27,12 @@ function createResponse(score: number) {
   };
 }
 
-const BadRequestError = new BadRequest('password missing in POST body');
+const BadRequestError = new BadRequest(
+  'The password property is missing in Post body or have invalid value',
+);
 
 router.post('/v1', (req, res, next) => {
-  if (req.body.password) {
+  if (req.body.password && typeof req.body.password === 'string') {
     const { score } = zxcvbn(req.body.password);
 
     res.json(createResponse(score));
@@ -40,7 +42,7 @@ router.post('/v1', (req, res, next) => {
 });
 
 router.post('/v2', (req, res, next) => {
-  if (req.body.password) {
+  if (req.body.password && typeof req.body.password === 'string') {
     const score = passwordStrength(req.body.password);
     res.json(createResponse(score));
   } else {
