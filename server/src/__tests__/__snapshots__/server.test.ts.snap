@@ -2,7 +2,7 @@
 
 exports[`/password-complexity/v1 should return bad request error 1`] = `
 Object {
-  "message": "password missing in POST body",
+  "message": "The password property is missing in Post body or have invalid value",
   "status": "error",
   "statusCode": 400,
   "type": "Bad Request",
@@ -51,7 +51,7 @@ Object {
 
 exports[`/password-complexity/v2 should return bad request error 1`] = `
 Object {
-  "message": "password missing in POST body",
+  "message": "The password property is missing in Post body or have invalid value",
   "status": "error",
   "statusCode": 400,
   "type": "Bad Request",

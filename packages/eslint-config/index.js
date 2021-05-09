@@ -12,7 +12,6 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
     'plugin:monorepo/recommended',
   ],
   parserOptions: {
@@ -31,6 +30,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': OFF,
+    '@typescript-eslint/explicit-module-boundary-types': OFF,
     'import/no-unresolved': [ERROR, { caseSensitive: true }],
     'jest/no-disabled-tests': WARN,
     'jest/no-focused-tests': ERROR,

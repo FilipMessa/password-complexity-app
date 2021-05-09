@@ -9,7 +9,7 @@ test('should return not found error', async () => {
   expect(res.body).toMatchSnapshot();
 });
 
-['v1', 'v2'].forEach(apiVersion => {
+['v1', 'v2'].forEach((apiVersion) => {
   describe(`/password-complexity/${apiVersion}`, () => {
     it('should return socpre 0', async () => {
       const res = await request.post('/password-complexity/v2').send({

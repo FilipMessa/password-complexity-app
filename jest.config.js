@@ -15,7 +15,7 @@ module.exports = {
   testPathIgnorePatterns: ['__snapshots__'],
   globals: {
     'ts-jest': {
-      tsConfig: 'tsconfig.base.json',
+      tsconfig: 'tsconfig.base.json',
     },
   },
 };

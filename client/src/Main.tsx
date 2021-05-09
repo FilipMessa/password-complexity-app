@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { hot } from 'react-hot-loader';
 import App from './App';
 import { GlobalStyles, Checkbox } from './components';
 import { PasswordScore } from './types';
@@ -62,4 +61,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default hot(module)(Main);
+export default Main;
