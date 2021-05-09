@@ -18,17 +18,16 @@ interface AppProps {
   password: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   faceType?: Score;
-  isError?: boolean;
+  error?: string;
   strength?: StrengthType;
 }
 
-const App: React.FC<AppProps> = ({ title, password, onChange, faceType, isError, strength }) => {
-  const errorMessage = isError ? 'Ups! Something went wrong :(' : '';
+const App: React.FC<AppProps> = ({ title, password, onChange, faceType, error, strength }) => {
   return (
     <Layout>
       <Title>{title}</Title>
-      <InputField value={password} onChange={onChange} errorMessage={errorMessage} />
-      <Wrapper>{typeof faceType === 'number' && !isError && <DoomFace type={faceType} />}</Wrapper>
+      <InputField value={password} onChange={onChange} errorMessage={error} />
+      <Wrapper>{typeof faceType === 'number' && !error && <DoomFace type={faceType} />}</Wrapper>
       {strength && <Badge label={strength} />}
     </Layout>
   );

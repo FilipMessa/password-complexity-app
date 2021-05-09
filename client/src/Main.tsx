@@ -1,33 +1,43 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import App from './App';
 import { GlobalStyles, Checkbox } from './components';
 import { PasswordScore } from './types';
 import { fetchPasswordScore, API } from './utils/requests';
 import { useDebounce } from './utils/useDebounce';
+import { AxiosError } from 'axios';
+
+const DEBOUNCE_TIME = 500;
+
+function isNetworkError(err: AxiosError) {
+  return !!err.isAxiosError && !err.response;
+}
 
 const Main: React.FC = () => {
   const [apiVersion, setApiVersion] = useState<API>(API.VERSION_1);
-  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState('');
   const [password, setPassword] = useState('');
   const [passwordScore, setPasswordScore] = useState<PasswordScore | null>();
 
-  const resetScore = useCallback(() => setPasswordScore(null), []);
-
-  const debouncedPassword = useDebounce(password, 500);
+  const debouncedPassword = useDebounce(password, DEBOUNCE_TIME);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        isError && setIsError(false);
+        error && setError('');
         const result = await fetchPasswordScore(debouncedPassword, apiVersion);
         setPasswordScore(result);
       } catch (err) {
-        setIsError(true);
+        const errorMessage = isNetworkError(err)
+          ? 'Server Not Responding'
+          : 'Ups! Something went wrong :(';
+
+        setPasswordScore(null);
+        setError(errorMessage);
       }
     };
 
     if (!debouncedPassword) {
-      resetScore();
+      setPasswordScore(null);
     } else {
       fetchData();
     }
@@ -49,7 +59,7 @@ const Main: React.FC = () => {
     <>
       <Checkbox label="API v2" checked={apiVersion === API.VERSION_2} onChange={handleApiChange} />
       <App
-        isError={isError}
+        error={error}
         title="Password Complexity"
         onChange={handleChange}
         password={password}
